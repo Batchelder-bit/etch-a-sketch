@@ -22,11 +22,10 @@ body {
 .grid {
     border: 1px solid royalblue;
     height: 25px;
-    width: 25px;
 }
 
 .endingDiv {
-    width: 100%;
+    flex-basis: 100%;
     border: 0px;
     height: 0px;
 }
