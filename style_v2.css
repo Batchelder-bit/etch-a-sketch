@@ -1,0 +1,20 @@
+* {
+    box-sizing: border-box
+}
+
+body {
+    height: 800px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 3px solid blue;
+}
+
+.container {
+    flex-grow: 1;
+    display: flex;
+    height: 100%;
+    border: 5px solid red;
+    margin: 30px;
+}

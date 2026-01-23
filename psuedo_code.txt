@@ -1,0 +1,2 @@
+1. Create a grid across the whole screen.
+2. When mouse highlights over a box change its color

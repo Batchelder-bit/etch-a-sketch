@@ -6,15 +6,15 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    height: 100%;
 }
 
 .container {
     margin: 0;
     display: flex;
-    align-items: center;
+    flex: 1 1 auto;
     padding: 100px;
     flex-wrap: wrap;
-    width: 85%;
     border: .5px solid royalblue;
     justify-content: center;
 }
