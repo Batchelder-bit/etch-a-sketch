@@ -2,11 +2,41 @@ console.log("I am working");
 
 const container = document.querySelector('.container');
 
+const gridElements = document.querySelector('.grid');
+
+const boxElements = document.querySelector('.box');
+
+const randomColors = ['#1F2937',
+'#3B82F6',
+'#10B981',
+'#F59E0B',
+'#EF4444',
+'#8B5CF6',
+'#EC4899',
+'#22C55E',
+'#06B6D4',
+'#EAB308',
+'#0F172A',
+'#64748B',
+'#A855F7',
+'#14B8A6',
+'#F97316',
+'#DC2626',
+'#84CC16',
+'#38BDF8',
+'#F472B6',
+'#78350F' ]
+
 function createRow () {
     let newDiv = document.createElement('div');
     newDiv.classList.add('grid');
     return newDiv;
 }
+function randomNumber (max) {
+    let randomNum = Math.floor(Math.random() * max);
+    return randomNum;
+}
+
 
 function createBoxes (numberofBoxes) {
     let currentRow = container.lastElementChild;
@@ -18,46 +48,12 @@ function createBoxes (numberofBoxes) {
     
 }
 
-function returnClosestSquareRoot (number) {
-    if (number < 0 || isNaN(number))
-        return NaN;
-
-    squareRoot = Math.sqrt(number);
-    roundedSquareRoot = Math.round(squareRoot);
-    return roundedSquareRoot;
-}
-
-function createAllRows(inputNumber) {
-    for (let i = 0; i < inputNumber; i++) {
-        newRow = createRow();
-        container.appendChild(newRow);
-    }
-}
-
-function createAllBoxes(inputNumber) {
-    for (let i = 0; i < inputNumber; i++) {
-        newBox = createBox();
-        let currentRow = document.querySelector('.grid');
-        currentRow.appendChild(newBox);
-    }
-}
-
-function createRowandBox (inputNumber) {
-    oneRow = createAllRows(1);
-    for (let i = 0; i < inputNumber; i++) {
-        boxes = createAllBoxes(1);
-    }
-}
-
-/// function main (userInput) {
-///    for (let i = 0; i < userInput; i++) {
-///        createRowandBox (userInput);
-///    }
-///} 
-
 function createGrid (userEval) {
-    for (let i = 0; i < userEval; i++) {
+    let row_id_number = 0;
+    for (let i = 0; i <= userEval; i++) {
         let row = createRow();
+        row.id = 'row_' + String(row_id_number);
+        ++row_id_number;
         if (i == 0) 
         continue
         else {
@@ -67,9 +63,28 @@ function createGrid (userEval) {
     }
 }
 
-function changeMouseColor () {
-    
+function currentRow_v2 () {
+    container.addEventListener('mouseover', function(event){
+    if (event.target.classList.contains('grid')) {
+        const row = event.target;
+        row.addEventListener('mouseover', function(event){
+            if (event.target.classList.contains('box')) {
+                const box = event.target;
+                let randomColorCode = randomNumber(21);
+                box.style.backgroundColor = randomColors[randomColorCode];
+            }
+        })
+    }
+})
+}
+
+function main_1 () {
+    currentRow_v2();
 }
 
 
-document.addEventListener('DOMContentLoaded', () => createGrid(5));
+document.addEventListener('DOMContentLoaded', () => createGrid(50));
+
+// boxElements.addEventListener('mouseover', main());
+
+main_1 ();

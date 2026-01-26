@@ -22,10 +22,10 @@ body {
 .grid {
     display: flex;
     flex: 1 1 auto;
-    border: 5px solid green;
+    border: .5px solid black;
 }
 
 .box {
     flex: 1;
-    border: 5px solid orange;
+    border: .5px solid black;
 }
