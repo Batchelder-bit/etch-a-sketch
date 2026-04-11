@@ -8,10 +8,13 @@
     </head>
     <body>
         <div class="title-bar">Etch-a-sketch</div>
-        <form>
-        <label for="username">Username:</label>
-        <input type="text" id="username" name="username" placeholder="Enter username">
+        <div class="form-container">
+        <form id="enter-form">
+        <label for="box_number">Number of boxes per side:</label>
+        <input type="number" id="box_number" name="box_number" placeholder="10">
+        <button type="submit">Submit</button>
         </form>
+        </div>
         <div class="container">
         </div>
     </body>

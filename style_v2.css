@@ -10,6 +10,15 @@ body {
     border: 3px solid blue;
 }
 
+.form-container {
+    display: flex;
+    flex-direction: row;
+}
+
+button {
+    margin-left: 20px;
+}
+
 .container {
     flex-grow: 1;
     display: flex;

@@ -83,8 +83,20 @@ function main_1 () {
 }
 
 
-document.addEventListener('DOMContentLoaded', () => createGrid(50));
 
-// boxElements.addEventListener('mouseover', main());
+//document.addEventListener('DOMContentLoaded', () => createGrid(20));
+
+const form = document.getElementById('enter-form');
+form.onsubmit = function (event) {
+    event.preventDefault();
+    const box_container = document.querySelector(".container");
+    box_container.replaceChildren();
+    const number_of_boxes = document.getElementById("box_number").value;
+    console.log(number_of_boxes);
+    createGrid(number_of_boxes);
+    boxElements.addEventListener('mouseover', main());
+}
+
+//boxElements.addEventListener('mouseover', main());
 
 main_1 ();
